@@ -5,7 +5,7 @@
    Tutorial 11
    Case Problem 2
 
-   Author: 
+   Author: Elijah Collins
    Date:   
    
    Filename: mt_calc.js
@@ -33,7 +33,9 @@
 
 */
 
-
+function init(){
+   var calcButtons = 
+}
 
 
 
