@@ -34,9 +34,11 @@
 
 */
 
+/* Places in cells and leaves them unmarked. */
 var allCells;
 var found = false;
 
+/* initialized all content as the window is loaded. */
 window.onload = init;
 
 function init() {
@@ -50,7 +52,7 @@ function init() {
       allCells[i].style.cursor = "pointer";
       allCells[i].addEventListener("mousedown", startRecording);
    }
-   
+   /* The given fuction will alert you as the puzzle is finished by the user. */
    document.getElementById("wordSearchTable").onmouseup = function() {
       stopRecording();
       var wordList = document.querySelectorAll("ul#wordSearchList li");
@@ -65,7 +67,7 @@ function init() {
          alert("You solved the puzzle!");
       }
    };
-   
+   /* Upon clicking the function, it will show the answer to the given word search. */
    document.getElementById("showSolution").onclick = function() {
       for (var i = 0; i < allCells.length; i++) {
          if (allCells[i].className === "wordCell") {
@@ -75,7 +77,7 @@ function init() {
    };
 
 }
-
+/* This and the following function will begin and continue highlighting content that you hover over when you click your mouse. */
 function startRecording(e) {
    document.getElementById("pickedLetters").value += e.target.textContent;
    if (e.target.style.backgroundColor !== "rgb(28, 255, 132)") {
@@ -101,7 +103,7 @@ function stopRecording() {
    checkLetters();
 }
   
-
+/* function will check the list in the maketable file to see if the word highlighted is correct. */
 function checkLetters() {
    var currentLetters = document.getElementById("pickedLetters").value;
    var wordList = document.querySelectorAll("ul#wordSearchList li");
